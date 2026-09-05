@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accessible Form UI</title>
+        <link rel="stylesheet" href="accessible_form_ui.css" />
+    </head>
+    <body>
+        <div class="accessible-form">
+            <form id="accessible-form">
+                <section class="form-label-input">
+                    <label for="full-name"> Full Name </label>
+                    <input 
+                        id="full-name" 
+                        name="full-name" 
+                        placeholder="What should we call you?" 
+                        aria-required="true"
+                        aria-invalid="false"
+                        aria-describedby="name-error-message"
+                    >
+                    <small id="name-error-message" class="error-message not-show"> Name should not be empty </small>
+                </section>
+                <section class="form-label-input">
+                    <label for="email"> Email </label>
+                    <input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        placeholder="johndoe@gmail.com" 
+                        required
+                        aria-required="true"
+                        aria-invalid="false"
+                        aria-describedby="email-error-message"
+                    >
+                    <small id="email-error-message" class="error-message not-show"> Email should be a valid email </small>
+                </section>
+                <section class="form-label-input">
+                    <label for="password"> Enter Password </label>
+                    <div class="password-input-box">
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="password" 
+                            placeholder="xxxxxxxx"
+                            aria-required="true" 
+                            aria-invalid="false"
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password-btn"
+                            aria-controls="password"
+                            aria-pressed="false"
+                            aria-label="Show password. Password is hidden."
+                            >
+                            <img id="eyeicon-password" src="show.png" alt="" aria-hidden="true"/>
+                        </button>
+                    </div>
+                </section>
+                <section class="form-label-input">
+                    <label for="confirm-password"> Confirm Password </label>
+                    <div class="password-input-box">
+                        <input 
+                            id="confirm-password" 
+                            name="confirm-password" 
+                            type="password" 
+                            placeholder="xxxxxxxx"
+                            aria-required="true" 
+                            aria-invalid="false"
+                            aria-describedby="confirm-password-error-message"
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password-btn"
+                            aria-controls="confirm-password"
+                            aria-pressed="false"
+                            aria-label="Show password. Password is hidden."
+                            >
+                            <img id="eyeicon-confirm-password" src="show.png" alt="" aria-hidden="true"/>
+                        </button>
+                    </div>
+                    <small id="confirm-password-error-message" class="error-message not-show"> Passwords should match each other. </small>
+                </section>
+
+                <section>
+                    <button type="submit"> Update Profile </button>
+                </section>
+            </form>
+
+            <aside>
+                <section>
+                    <header>
+                        <section class="progress">
+                            <div class="progress-circle">
+                                <span class="progress-value">
+                                    65%
+                                </span>
+                            </div>
+                            
+                        </section>
+                    </header>
+                    <footer>
+                        <h4>Profile Completeness</h4>
+                    </footer>
+                </section>
+                <section class="steps">
+                    <p class="crossed">Create account</p>
+                    <p class="crossed">Update Roadmap Progress</p>
+                    <p class="crossed">Setup Public Profile</p>
+                    <p>Complete your first project </p>
+                    <p>Invite your Friends </p>
+                </section>
+            </aside>    
+            
+        </div>
+    </body>
+
+    <script type="text/javascript" src="accessible_form.js"></script>
+</html>
