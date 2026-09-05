@@ -6,6 +6,9 @@ const email = document.getElementById("email")
 const eyeicon_password = document.getElementById("eyeicon-password")
 const eyeicon_confirm_password = document.getElementById("eyeicon-confirm-password")
 
+const passwordButton = document.getElementById("toggle-password-button")
+const confirmPasswordButton = document.getElementById("toggle-confirm-password-button")
+
 let password = document.getElementById("password")
 let confirm_password = document.getElementById("confirm-password") 
 
@@ -57,12 +60,12 @@ function togglePasswordVisibility (input, button) {
     button.setAttribute("aria-pressed", isHidden ? "true" : "false");
 }
 
-eyeicon_password.addEventListener("click", () => {
-    togglePasswordVisibility(password, eyeicon_password);
+passwordButton.addEventListener("click", () => {
+    togglePasswordVisibility(password, passwordButton);
 });
 
-eyeicon_confirm_password.addEventListener("click", () => {
-    togglePasswordVisibility(confirm_password, eyeicon_confirm_password);
+confirmPasswordButton.addEventListener("click", () => {
+    togglePasswordVisibility(confirm_password, confirmPasswordButton);
 });
 
 accessible_form.onsubmit = function (event) {
